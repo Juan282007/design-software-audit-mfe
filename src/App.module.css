@@ -1,0 +1,73 @@
+/*
+ * auditMfe root. Scoped base mirroring the v2 mockup global rules
+ * (design-software-pages/v2/assets/{tokens,components}.css), anchored under
+ * data-mfe="audit" so no selector ever leaks outside this remote (ADR-009).
+ */
+.root {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #101828;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  /* The remote must never create page-level horizontal scroll in the shell;
+   * inner regions (table) keep their own scroll. Fixed modals are unaffected. */
+  overflow-x: clip;
+}
+
+.root button,
+.root input,
+.root select,
+.root textarea {
+  font: inherit;
+}
+
+/* The mockup relies on a global border-box reset (components.css:1).
+ * Scoped here so inputs don't overflow their grid tracks (ADR-009). */
+.root *,
+.root *::before,
+.root *::after {
+  box-sizing: border-box;
+}
+
+.root button,
+.root a,
+.root input,
+.root select,
+.root textarea {
+  outline-offset: 3px;
+}
+
+.root :focus-visible {
+  outline: 3px solid rgba(0, 120, 50, 0.28);
+}
+
+.root svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Standalone dev only (main.tsx): simulates the shell .content around the remote. */
+.standalone {
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.standaloneInner {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+@media (max-width: 767px) {
+  .standaloneInner {
+    padding: 20px 12px 32px;
+  }
+}

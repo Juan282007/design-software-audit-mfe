@@ -1,0 +1,238 @@
+/* .modal-backdrop + .modal.modal-lg — mirrors components.css */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 24, 40, 0.56);
+  z-index: 1010;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.modal {
+  width: min(640px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 18px 44px rgba(16, 24, 40, 0.24);
+  z-index: 1020;
+}
+
+.modalLg {
+  width: min(920px, 100%);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  border-bottom: 1px solid #eaecf0;
+}
+
+.modalHeader h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.iconBtn {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #344054;
+  cursor: pointer;
+}
+
+.iconBtn:hover {
+  background: #f2f4f7;
+}
+
+.modalBody {
+  padding: 24px;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #eaecf0;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.eventName {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  border: 1px solid;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #175cd3;
+  background: #eff8ff;
+  border-color: #b2ddff;
+}
+
+.statusBadge svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* dl.detail-grid */
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+}
+
+.detailItem {
+  background: #fcfcfd;
+  border: 1px solid #eaecf0;
+  border-radius: 6px;
+  padding: 14px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.detailItem dt {
+  color: #475467;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.detailItem dd {
+  margin: 6px 0 0;
+  color: #101828;
+  font-weight: 500;
+}
+
+.sectionTitle {
+  margin: 24px 0 12px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.copyIconBtn {
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #475467;
+  cursor: pointer;
+  padding: 6px;
+  vertical-align: middle;
+}
+
+.copyIconBtn:hover {
+  background: #f2f4f7;
+  color: #101828;
+}
+
+.copyIconBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* pre.code-view */
+.codeView {
+  margin: 0;
+  background: #101828;
+  color: #e4e7ec;
+  border-radius: 6px;
+  padding: 16px;
+  overflow: auto;
+  font: 12px/1.6 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.btn {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: none;
+  background: white;
+  color: #101828;
+}
+
+.btn:hover {
+  filter: brightness(0.98);
+}
+
+.btnPrimary {
+  background: #007832;
+  color: #fff;
+}
+
+.btnPrimary:hover {
+  background: #00652b;
+}
+
+.btnSecondary {
+  border-color: #d0d5dd;
+  color: #344054;
+}
+
+.copyJson {
+  margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+  .detailGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .backdrop {
+    padding: 0;
+    align-items: end;
+  }
+  .modal {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: 16px 16px 0 0;
+  }
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+  .modalFooter {
+    flex-direction: column-reverse;
+  }
+  .modalFooter .btn {
+    width: 100%;
+  }
+}
