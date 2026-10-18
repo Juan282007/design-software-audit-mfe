@@ -1,0 +1,110 @@
+/* Loading / empty / error states — mirrors components.css */
+.panel {
+  background: #ffffff;
+  border: 1px solid #eaecf0;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
+  overflow: hidden;
+}
+
+.emptyState,
+.errorState,
+.loadingState {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 320px;
+  padding: 40px 24px;
+}
+
+.stateIcon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f2f4f7;
+  color: #475467;
+  margin-bottom: 16px;
+}
+
+.stateIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.emptyState h2,
+.errorState h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.emptyState p,
+.errorState p {
+  max-width: 540px;
+  margin: 0 0 20px;
+  color: #475467;
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #e4e7ec;
+  border-radius: 4px;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.72), transparent);
+  animation: shimmer 1.3s infinite;
+}
+
+@keyframes shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.skeletonRow {
+  height: 54px;
+  margin-bottom: 1px;
+}
+
+.btn {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: none;
+  background: white;
+  color: #101828;
+}
+
+.btn:hover {
+  filter: brightness(0.98);
+}
+
+.btnPrimary {
+  background: #007832;
+  color: #fff;
+}
+
+.btnPrimary:hover {
+  background: #00652b;
+}
+
+.btnSecondary {
+  border-color: #d0d5dd;
+  color: #344054;
+}

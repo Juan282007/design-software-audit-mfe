@@ -1,0 +1,138 @@
+/* form.card.filters — mirrors design-software-pages/v2/assets/components.css */
+.card {
+  background: #ffffff;
+  border: 1px solid #eaecf0;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 16px;
+  align-items: end;
+  padding: 20px 24px;
+  margin: 0 0 20px;
+}
+
+.formField {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+}
+
+.formField > span,
+.formField label > span {
+  color: #344054;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.input,
+.select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 40px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  background: #fff;
+  color: #101828;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.input::placeholder {
+  color: #98a2b3;
+}
+
+.input:focus,
+.select:focus {
+  border-color: #007832;
+  box-shadow: 0 0 0 4px rgba(0, 120, 50, 0.12);
+  outline: 0;
+}
+
+/* .btn.btn-secondary — same look as mockup, sized like the reference shots */
+.btn {
+  min-height: 40px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: none;
+  background: white;
+  color: #101828;
+  white-space: nowrap;
+  justify-self: start;
+  min-width: 220px;
+}
+
+.btnSecondary {
+  border-color: #d0d5dd;
+  color: #344054;
+}
+
+.btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.fieldError {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+  color: #b42318;
+  font-size: 12px;
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.fieldError svg {
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+}
+
+/* Export error (E4): inline next to the button, never blocks the screen. */
+.exportError {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+  color: #b42318;
+  font-size: 12px;
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+@media (max-width: 1280px) {
+  .filters {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .filters {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+  .btn {
+    justify-self: stretch;
+    min-width: 0;
+  }
+}
