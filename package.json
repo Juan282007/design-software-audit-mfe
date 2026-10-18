@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "test:contract": "vitest run src/contracts/pact",
     "lint": "eslint .",
     "generate:types": "openapi-typescript ../design-software-docs/07-api/contracts/openapi/audit.yaml -o src/contracts/generated/audit.ts"
   },
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@module-federation/vite": "^1.23.0",
+    "@pact-foundation/pact": "^15.0.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.3",
     "@types/react": "^18.3.31",
